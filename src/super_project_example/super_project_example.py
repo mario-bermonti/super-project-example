@@ -17,3 +17,4 @@ def hello_fun2(param1: str) -> None:
         param1: whatever you want
     """
     print(f"hello, {param1}")
+
