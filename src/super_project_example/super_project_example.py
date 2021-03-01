@@ -1,14 +1,19 @@
 """Main module."""
 
 
-def hello_fun(param1):
-    """Super functions
+def hello_fun(param1: str) -> None:
+    """Super function.
 
     Args:
-        param1: Whatever you want
-
-    Returns:
-        param1:  same
+        param1: whatever you want
     """
+    print(f"hello, {param1}")
 
-    print("hello, Mario")
+
+def hello_fun2(param1: str) -> None:
+    """Super function.
+
+    Args:
+        param1: whatever you want
+    """
+    print(f"hello, {param1}")

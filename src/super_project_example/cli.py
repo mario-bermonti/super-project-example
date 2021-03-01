@@ -11,7 +11,7 @@ def main() -> int:
     """Console script for super-project-example."""
     click.echo("Replace this message by putting your code into super_project_example.cli.main")
     click.echo("See click documentation at https://click.palletsprojects.com/")
-    hello_fun(1)
+    hello_fun("Pitufo")
     return 0
 
 
