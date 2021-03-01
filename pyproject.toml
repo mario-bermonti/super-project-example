@@ -1,0 +1,123 @@
+
+[tool.poetry]
+name = "super-project-example"
+version = "0.3.0"
+description = "My super description"
+authors = ["Mario Bermonti <mbermonti1132@gmail.com>"]
+
+readme = "README.md"
+homepage = "https://github.com/mario-bermonti/super-project-example"
+repository = "https://github.com/mario-bermonti/super-project-example"
+documentation = "https://super-project-example.readthedocs.io"
+keywords = ["super-project-example"]
+classifiers=[
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/mario-bermonti/super-project-example/issues"
+
+
+
+[tool.poetry.scripts]
+super-project-example = 'super_project_example.cli:main'
+
+
+[tool.poetry.dependencies]
+python = "^3.6.0"
+
+click = "*"
+
+
+[tool.poetry.dev-dependencies]
+pre-commit = "*"
+invoke = "*"
+flake8 = "*"
+flakehell = "*"
+flake8-builtins = "*"
+flake8-blind-except = "*"
+flake8-logging-format = "*"
+flake8-bugbear = "*"
+flake8-annotations = "*"
+flake8-docstrings = "*"
+flake8-bandit = "*"
+darglint = "*"
+isort = "*"
+black = "*"
+safety = "*"
+mypy = "*"
+sphinx = "*"
+recommonmark = "*"
+bump2version = "*"
+pytest = "*"
+xdoctest = "*"
+coverage = {version = "*", extras = ["toml"]}
+pytest-cov = "*"
+watchdog = {version = "*", extras = ["watchmedo"]}
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["super_project_example"]
+
+[tool.coverage.report]
+fail_under = 100
+exclude_lines = [
+  "pragma: no cover",
+  "def __repr__",
+  "if self.debug",
+  "if settings.DEBUG:",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if 0:",
+  "if __name__ == __main__:"
+]
+show_missing = true
+
+[tool.coverage.html]
+directory = "htmlcov"
+
+[tool.flakehell]
+format = "grouped"
+max_line_length = 99
+show_source = true
+docstring-convention = "google"
+
+[tool.flakehell.plugins]
+pyflakes = ["+*"]
+pycodestyle = ["+*"]
+mccabe = ["+*"]
+"flake8-*" = ["+*"]
+darglint = ["+*"]
+
+[tool.flakehell.exceptions."tests/"]
+flake8-bandit = ["-S101"]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 99
+known_third_party = ["invoke", "nox"]
+
+[tool.black]
+line-length = 99
+target-version = ["py36"]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
