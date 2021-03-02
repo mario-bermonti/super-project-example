@@ -35,13 +35,13 @@ super-project-example = 'super_project_example.cli:main'
 
 
 [tool.poetry.dependencies]
-python = "^3.6.0"
+python = "^3.6.1"
 
 click = "*"
 
 
 [tool.poetry.dev-dependencies]
-pre-commit = "*"
+pre-commit = "2.9.0"
 invoke = "*"
 flake8 = "*"
 flakehell = "*"
