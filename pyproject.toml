@@ -41,7 +41,7 @@ click = "*"
 
 
 [tool.poetry.dev-dependencies]
-pre-commit = "2.9.0"
+pre-commit = "2.10.1"
 invoke = "*"
 flake8 = "*"
 flakehell = "*"
